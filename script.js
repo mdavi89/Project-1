@@ -1,3 +1,4 @@
+
 const submitButton = document.querySelector()
 const expenseInput = document.querySelector()
 const amountInput = document.querySelector()
