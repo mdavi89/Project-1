@@ -1,0 +1,13 @@
+header {
+    height: 25%;
+    width: 100%;
+    position:fixed;
+    top: 5;
+    background-color: rgb(60, 98, 98);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5%;
+}
+
