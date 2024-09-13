@@ -6,11 +6,10 @@ body {
     min-height: 100vh;
     justify-content: flex-start;
 }
-
 header {
     padding: 40px;
     text-align: center;
-    background: #13293d;
+    background: #13293D;
     color: #fff;
 }
 
