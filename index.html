@@ -16,6 +16,7 @@
       <h1>Budget Planner!</h1>
      </header>
     <section>
+      </div>
       <div class="container text-center">
         <div class="row justify-content-start">
           <div class="col-6">
@@ -48,7 +49,7 @@
         </div>
       </section>
       <section>
-        <form>
+        <form class="form-control p-3 row g-3">
           <div class="input-group mb-3">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pay Period</button>
             <ul class="dropdown-menu">
@@ -56,13 +57,25 @@
               <li><a class="dropdown-item" href="#">Bi-Weekly</a></li>
               <li><a class="dropdown-item" href="#">Weekly</a></li>
             </ul>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button" id="budget" placeholder="Add amount here">
-            <button type="button" class="btn btn-outline-success">Submit</button>
+            <input type="text" class="form-control pay-period-button" aria-label="Text input with dropdown button" id="budget" placeholder="Add amount here">
+            <button type="button" class="btn btn-outline-success" >Submit</button>
 
           </div>
         </form>
       </section>
-
+    <section>
+      <div class="container text-center">
+        <div class="row gx-5">
+          <div class="col">
+            <h1 class="display-2">Total Budget</h1>
+            <h2>$Example</h2>
+          </div>
+          <div class="col">
+            <h1 class="display-2">Remaining</h1>
+            <h2>$Example</h2>
+          </div>
+        </div>
+    </section>
    <footer>
     <h3>Coming Soon!</h3>
    </footer>
