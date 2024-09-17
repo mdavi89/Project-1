@@ -1,28 +1,54 @@
 // Selecting the main branch and adding it to a variable
-mainEl = document.querySelector('main');
+const tbodyEl = document.querySelector('tbody');
+const budgetHtmlEl = document.getElementById('budget-html');
+const RemainingHtmlEl = document.getElementById('remaining-html');
 
-// initial function for when the page loads
 
 
+function isNumber(value) {
+    return typeof value === 'number';
+}
+// reads local storage data
+const readLocalStorage = function() {
+    let emptyData = [];
+    let localData = JSON.parse(localStorage.getItem('expData'));
+    if (localData === null) {
+        return emptyData;
+    }
+    else {
+        return localData;
+    }
+    
+};
+
+  // stores local data
+const storeLocalStorage = function(object) {
+    let localData = readLocalStorage();
+    localData.push(object);
+    localStorage.setItem('expData', JSON.stringify(localData));
+    let remaining = getRemaining();
+    localStorage.setItem('remaining', JSON.stringify(remaining));
+    renderBudget();
+};
 // function to add budget entries to the main
 const buildAnElement = function() {
     let budgetEntry = readLocalStorage();
     budgetEntry.forEach(entry => {
-        const budgetElement = document.createElement('div');
-        budgetElement.classList.add('budget-entry');
+        const trElement = document.createElement('tr');
+        trElement.classList.add('entry');
 
-        const expenseElement = document.createElement('h2');
+        const expenseElement = document.createElement('th');
         expenseElement.textContent = entry.expense;
 
-        const amountElement = document.createElement('p');
-        amountElement.textContent = entry.content;
+        const amountElement = document.createElement('td');
+        amountElement.textContent = entry.amount;
 
         // Append elements to the budget element
-        budgetElement.appendChild(expenseElement);
-        budgetElement.appendChild(amountElement);
+        trElement.appendChild(expenseElement);
+        trElement.appendChild(amountElement);
 
-        // Append the post element to the main element
-        mainEl.appendChild(budgetElement);
+        // Append the entry element to the tbody element
+        tbodyEl.appendChild(trElement);
     });
 
 }
@@ -31,46 +57,39 @@ function budgetCheck() {
     let emptyData = '';
     check = readLocalStorage();
     if (check == emptyData) {
-        mainEl.textContent = "No expense added yet!";
+        tbodyEl.textContent = "No expense added yet!";
     };
     
 };
 
+function budgetTotalCheck() {
+    let check = JSON.parse(localStorage.getItem('budget'));
+    let checkingCheck = isNumber(check);
+    if (checkingCheck === false) {
+        budgetHtmlEl.textContent = "No budget added yet!";
+        RemainingHtmlEl.textContent = '';
+    };
+    
+};
+
+function renderBudget(){
+    let budget = JSON.parse(localStorage.getItem('budget'));
+    let remainingMoney = JSON.parse(localStorage.getItem('remaining'));
+
+    budgetHtmlEl.textContent = budget;
+    RemainingHtmlEl.textContent = remainingMoney;
+    budgetTotalCheck();
+};
+
 // function to render the budget to the html
 function renderBudgetList() {
-    mainEl.innerHTML = '';
+    tbodyEl.innerHTML = '';
     budgetCheck();
     buildAnElement();
     
-};
-// function to track spending
-function trackSpending(){
-    let budget = localStorage.getItem('budget');
-    let expense = localStorage.getItem('expense');
-    let expenseTotal = budget - expense;
-    return expenseTotal;
-    
-};
-
-// function to render the budget amounts
-function renderBudget() {
-    const budgetEl = document.createElement('div');
-    budgetEl.classList.add('budget');
-
-    const budgetTotal = document.createElement('h2');
-    budgetTotal.textContent = localStorage.getItem('budget');
-
-    const amountRemaining = document.createElement('p');
-    amountRemaining.textContent = trackSpending();
-
-    // Append elements to the budget element
-    budgetEl.appendChild(budgetTotal);
-    budgetEl.appendChild(amountRemaining);
-
-    // Append the element to the main element
-    mainEl.appendChild(budgetEl);
 };
 
 budgetCheck();
 renderBudgetList();
 renderBudget();
+
