@@ -25,7 +25,6 @@ img {
 footer {
     width: 100%;
     padding: 20px;
-
     text-align: end;
     background: #2B192E;
     color: #F5E8DA;
@@ -47,6 +46,7 @@ footer {
       font-size: small;
     }
 } 
+
 table {
     background-color: #F5E8DA;
 }
