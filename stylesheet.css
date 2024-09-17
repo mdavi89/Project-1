@@ -24,7 +24,6 @@ img {
 footer {
     width: 100%;
     padding: 20px;
-
     text-align: end;
     background: #13293d;
     color: #fff;
@@ -46,12 +45,7 @@ footer {
       font-size: small;
     }
 } 
-=======
-    text-align: center;
-    background: #F5E8DA;
-    color: #2B192E;
-    margin-top: auto;
-}
+
 table {
     background-color: #F5E8DA;
 }
