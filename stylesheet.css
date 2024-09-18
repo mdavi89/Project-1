@@ -15,11 +15,11 @@ header {
 }
 
 img {
-    width: 13%;
-    height: 13%;
+    width: 9%;
+    height: 14%;
     position: absolute;
-    top: 8px;
-    left: 16px;
+    top: -2px;
+    left: 35px;
 }
 
 footer {
@@ -30,22 +30,6 @@ footer {
     color: #F5E8DA;
     margin-top: auto;
 }
-
-@media screen and (min-width: 1500px) and (max-width: 2200px) {
-    main,
-    div {
-      flex-direction: column;
-    }
-    .col {
-        flex-direction: column;
-    }
-  }
-
-@media screen and (max-width: 840px) {
-    footer {
-      font-size: small;
-    }
-} 
 
 table {
     background-color: #F5E8DA;
@@ -89,3 +73,17 @@ table {
 .beige {
     color: #F5E8DA
 }
+
+@media screen and (max-width: 840px) {
+    footer {
+      font-size: small;
+    }
+} 
+
+@media screen and (min-width: 380px) {
+    img { 
+        width: 120px;
+        top: -7px;
+        left: 15px;
+    }
+} 
