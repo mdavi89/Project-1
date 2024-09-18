@@ -30,8 +30,10 @@ footer {
     color: #F5E8DA;
     margin-top: auto;
 }
-
-@media screen and (min-width: 1500px) and (max-width: 2200px) {
+h2 {
+    text-align: center;
+}
+@media screen and (min-width: 1500px) and (max-width: 1800px) {
     main,
     div {
       flex-direction: column;
@@ -63,11 +65,11 @@ table {
     border-style: solid;
   border-width: 1px;
   border-radius: 20px;
-  padding: 10px;
-  flex: 0 0 300px;
-  margin: 20px;
+  padding: 20px;
+  margin: 20px 0px 170px 0px;
   background-color: #2B192E;
   margin-bottom: 170px;
+  position: flex;
 }
 .purple {
     background-color: #2B192E;
