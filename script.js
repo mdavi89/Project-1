@@ -42,7 +42,7 @@ function getRemaining() {
   let getAmount = readLocalStorage();
   console.log(getAmount.length);
   for (i=0; i<getAmount.length; i++) {
-    amountTotal = amountTotal+parseInt(getAmount[i].amount);
+    amountTotal = amountTotal+parseFloat(getAmount[i].amount);
   }
   let budgetRemaining = budget-amountTotal;
   return budgetRemaining;

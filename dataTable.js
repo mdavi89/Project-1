@@ -41,11 +41,12 @@ const buildAnElement = function() {
         expenseElement.textContent = entry.expense;
 
         const amountElement = document.createElement('td');
-        amountElement.textContent = entry.amount;
+        amountElement.textContent = '$' + parseFloat(entry.amount).toFixed(2);
 
         // Append elements to the budget element
         trElement.appendChild(expenseElement);
         trElement.appendChild(amountElement);
+        
 
         // Append the entry element to the tbody element
         tbodyEl.appendChild(trElement);
@@ -76,8 +77,8 @@ function renderBudget(){
     let budget = JSON.parse(localStorage.getItem('budget'));
     let remainingMoney = JSON.parse(localStorage.getItem('remaining'));
 
-    budgetHtmlEl.textContent = budget;
-    RemainingHtmlEl.textContent = remainingMoney;
+    budgetHtmlEl.textContent = '$' + parseFloat(budget).toFixed(2);
+    RemainingHtmlEl.textContent = '$' + parseFloat(remainingMoney).toFixed(2);
     budgetTotalCheck();
 };
 
