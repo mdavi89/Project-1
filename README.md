@@ -7,13 +7,12 @@
 ## Usage
 
 Provide instructions and examples for use. Include screenshots as needed.
-Add a budget in the budget
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+Add a budget in the budget input.
+![Screenshot of the budget input.](<assets/Screenshot budget 2024-09-23 190044.png>)
+Add an expense and amount in the following inputs.
+![Screenshot of the expense and amount inputs.](<assets/Screenshot expense.png>)
+See your budget update the the expenses put in.
+![alt text](<assets/Screenshot budget remaining.png>)
 ## Credits
 
 Matthew Davis https://github.com/mdavi89
@@ -21,18 +20,4 @@ Makayla Johnson https://github.com/MAKAYLAJ14
 Christian Carbajal https://github.com/YamatoWanoKuni
 Logo made with https://www.canva.com/create/logos/
 
-## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
