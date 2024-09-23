@@ -49,7 +49,7 @@ h2 {
     }
 } 
 
-table {
+table, tr, th {
     background-color: #F5E8DA;
 }
 .form-1 {
